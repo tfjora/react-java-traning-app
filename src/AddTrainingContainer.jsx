@@ -2,19 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import AddTraining from "./AddTraining";
-import { createTraingRecord } from "./trainingActions";
+import { createTrainingSession } from "./trainingActions";
+import { getNextTrainingSessionId } from "./trainingReducer";
 
 const AddTrainingContainer = props => <AddTraining {...props} />
 
+const mapStateToProps = state => ({
+    nextId: getNextTrainingSessionId(state)
+})
+
 const mapDispatchToProps = dispatch => ({
-    createTrainingRecordFn: name => dispatch(createTraingRecord(name))
+    createTrainingSessionFn: (id, name, time, date) => dispatch(createTrainingSession(id, name, time, date))
 });
 
 AddTrainingContainer.propTypes = {
-    createTrainingRecordFn: PropTypes.func.isRequired
+    createTrainingSessionFn: PropTypes.func.isRequired
 }
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(AddTrainingContainer);

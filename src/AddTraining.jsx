@@ -7,34 +7,53 @@ class AddTraining extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            userInput: ''
+            userInputText: '',
+            userInputTime: '',
+            userInputDate: ''
         }
-        this.onUserInputChange = this.onUserInputChange.bind(this);
+        this.onUserInputTextChange = this.onUserInputTextChange.bind(this);
+        this.onUserInputTimeChange = this.onUserInputTimeChange.bind(this);
+        this.onUserInputDateChange = this.onUserInputDateChange.bind(this);
         this.onAddClick = this.onAddClick.bind(this);
     }
 
     render() {
         return (
             <div className="training-add__container">
-                <input type="text" onChange={this.onUserInputChange} />
-                <input type="date" />
-                <input type="button" onClick={this.onAddClick} value="Add"/>
+                <input type="text" onChange={this.onUserInputTextChange} />
+                <input type="time" onChange={this.onUserInputTimeChange} />
+                <input type="date" onChange={this.onUserInputDateChange} />
+                <input type="button" onClick={this.onAddClick} value="Add" />
             </div>)
     }
 
-    onUserInputChange(event) {
+    onUserInputTextChange(event) {
         this.setState({
-            userInput: event.target.value
+            userInputText: event.target.value
+        })
+    }
+
+    onUserInputTimeChange(event) {
+        this.setState({
+            userInputTime: event.target.value
+        })
+    }
+
+    onUserInputDateChange(event) {
+        this.setState({
+            userInputDate: event.target.value
         })
     }
 
     onAddClick() {
-        this.props.createTrainingRecordFn(this.state.userInput)
+        const { nextId, createTrainingSessionFn } = this.props;
+        const { userInputText, userInputTime, userInputDate } = this.state;
+        createTrainingSessionFn(nextId, userInputText, userInputTime, userInputDate)
     }
 }
 
 AddTraining.propTypes = {
-    createTrainingRecordFn: PropTypes.func.isRequired
+    createTrainingSessionFn: PropTypes.func.isRequired
 }
 
 export default AddTraining;

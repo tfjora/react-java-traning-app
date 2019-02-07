@@ -1,0 +1,10 @@
+.training-show__container{
+    margin-top: 50px;
+}
+
+.training-show__text > p > input[type="button"]{
+    background: lightgray;
+    color: black;
+    width: auto;
+    font-size: medium;
+}
