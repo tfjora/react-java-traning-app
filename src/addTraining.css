@@ -1,0 +1,27 @@
+.training-add__container {
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+}
+
+.training-add__container input[type="text"] {
+     font-size: medium;
+ }
+
+ .training-add__container input[type="button"] {
+    background: lightgray;
+    color: black;
+     font-size: medium;
+ }
+ 
+ .training-add__container input{
+    font-size: 1em;
+    padding: 5px;
+    border-radius:5px;
+    display:block;
+    width: 280px;
+    margin:10px 0;
+    border: 1px solid #E2E2E2;
+ }  
+

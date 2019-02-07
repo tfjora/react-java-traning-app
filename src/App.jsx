@@ -1,9 +1,12 @@
 import React from 'react';
-import "./app.css";
 import AddTrainingContainer from './AddTrainingContainer';
 
+import "./app.css";
+
 const App = () => (
-  <AddTrainingContainer />
+  <div className="app">
+    <AddTrainingContainer />
+  </div>
 )
 
 export default App;

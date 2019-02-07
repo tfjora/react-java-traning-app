@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./addTraining.css";
 
 class AddTraining extends React.Component {
 
@@ -14,10 +15,10 @@ class AddTraining extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="training-add__container">
                 <input type="text" onChange={this.onUserInputChange} />
                 <input type="date" />
-                <input type="button" onClick={this.onAddClick} />
+                <input type="button" onClick={this.onAddClick} value="Add"/>
             </div>)
     }
 
