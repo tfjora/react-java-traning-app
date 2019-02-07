@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class TrainingRecordItem extends React.Component {
+class AddTraining extends React.Component {
 
     constructor(props) {
         super(props)
@@ -32,8 +32,8 @@ class TrainingRecordItem extends React.Component {
     }
 }
 
-TrainingRecordItem.propTypes = {
+AddTraining.propTypes = {
     createTrainingRecordFn: PropTypes.func.isRequired
 }
 
-export default TrainingRecordItem;
+export default AddTraining;

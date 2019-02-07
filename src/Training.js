@@ -1,7 +1,7 @@
-class TraingRecord {
+class Training {
     constructor(name){
         this.name = name;
     }
 }
 
-export default TraingRecord;
+export default Training;

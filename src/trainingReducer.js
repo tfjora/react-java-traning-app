@@ -1,13 +1,13 @@
-import TrainingRecord from "./TrainingRecord";
+import Training from "./Training";
 
-export const trainingReducer = (trainingRecords = [], action) => {
+export const trainingReducer = (trainingSession = [], action) => {
     switch (action.type) {
         case "CREATE_TRAINING_RECORD":
             return [
-                ...trainingRecords,
-                new TrainingRecord(action.name)
+                ...trainingSession,
+                new Training(action.name)
             ]
         default:
-            return trainingRecords;
+            return trainingSession;
     }
 };

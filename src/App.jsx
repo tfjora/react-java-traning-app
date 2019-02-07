@@ -1,9 +1,9 @@
 import React from 'react';
-import TrainingRecordItemContainer from "./TrainingRecordItemContainer"
-import './App.css';
+import "./app.css";
+import AddTrainingContainer from './AddTrainingContainer';
 
 const App = () => (
-  <TrainingRecordItemContainer />
+  <AddTrainingContainer />
 )
 
 export default App;
