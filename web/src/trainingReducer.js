@@ -9,6 +9,8 @@ export const trainingReducer = (trainingSessions = [], action) => {
             ]
         case "DELETE_TRAINING_SESSION":
             return trainingSessions.filter(trainingSession => trainingSession.id !== action.id);
+        case "FETCH_TRAINING_SESSIONS":
+                return [...action.body.results];
         default:
             return trainingSessions;
     }

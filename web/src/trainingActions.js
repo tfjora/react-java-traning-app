@@ -10,3 +10,8 @@ export const deleteTrainingSession = id => ({
     type: "DELETE_TRAINING_SESSION",
     id
 });
+
+export const fetchTrainingSession = id => ({
+    type: "FETCH_TRAINING_SESSION",
+    id
+});

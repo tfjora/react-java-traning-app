@@ -1,3 +1,3 @@
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "http://localhost:8080/TrainingSession";
 
-export const fetchTrainingSessions = () => fetch(BASE_URL).then(response => response.json());
+export const fetchTrainingSessions = () => fetch(BASE_URL + "/bar").then(response => response.json());
