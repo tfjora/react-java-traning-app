@@ -10,6 +10,15 @@ public class TrainingSession {
     private Date date;
     private Time time;
 
+    public TrainingSession (int id, String name, Date date, Time time) {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.time = time;
+    }
+    public TrainingSession () {
+    }
+
     public int getId() {
         return id;
     }

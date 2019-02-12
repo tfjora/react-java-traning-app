@@ -14,14 +14,14 @@ class TrainingItem extends React.Component {
     render() {
         const { name, time, date, title} = this.props.trainingSession;
         return(
-        <div className="training-show__container">
-            <div className="training-show__text">
-                <p> Training: {name} {title}</p>
-                <p> Time: {time}</p>
-                <p> Date: {date}</p>
-                <p> <input type="button" onClick={this.onDeleteClick} value="Delete"/> </p>
+            <div className="training-show__container">
+                <div className="training-show__text">
+                    <p> Training: {name} {title}</p>
+                    <p> Time: {time}</p>
+                    <p> Date: {date}</p>
+                    <p><input type="button" onClick={this.onDeleteClick} value="Delete"/></p>
+                </div>
             </div>
-        </div>
         )
     }
 
