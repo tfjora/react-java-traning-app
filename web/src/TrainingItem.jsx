@@ -6,17 +6,17 @@ import "./trainingItem.css";
 class TrainingItem extends React.Component {
     
     constructor(props) {
-        super(props)
+        super(props);
 
         this.onDeleteClick = this.onDeleteClick.bind(this);
     }
 
     render() {
-        const { name, time, date } = this.props.trainingSession;
+        const { name, time, date, title} = this.props.trainingSession;
         return(
         <div className="training-show__container">
             <div className="training-show__text">
-                <p> Training: {name} </p>
+                <p> Training: {name} {title}</p>
                 <p> Time: {time}</p>
                 <p> Date: {date}</p>
                 <p> <input type="button" onClick={this.onDeleteClick} value="Delete"/> </p>
@@ -28,12 +28,10 @@ class TrainingItem extends React.Component {
     onDeleteClick() {
         this.props.deleteTrainingSessionFn(this.props.trainingSession.id)
     }
-
 }
 
 TrainingItem.propTypes = {
     trainingSession: PropTypes.instanceOf(TrainingSession).isRequired
-    
-}
+};
 
 export default TrainingItem;

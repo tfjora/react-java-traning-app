@@ -18,27 +18,28 @@ public class TrainingSession {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public String getName() {
+        return name;
     }
 
     public void setDate(Date date) {
         this.date = date;
     }
 
-    public Time getTime() {
-        return time;
+    public Date getDate() {
+        return date;
     }
 
     public void setTime(Time time) {
         this.time = time;
     }
+
+    public Time getTime() {
+        return time;
+    }
+
 }

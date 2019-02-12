@@ -1,8 +1,8 @@
 import React from 'react';
 import AddTrainingContainer from './AddTrainingContainer';
+import TrainingListContainer from './TrainingListContainer';
 
 import "./app.css";
-import TrainingListContainer from './TrainingListContainer';
 
 const App = () => (
   <div className="app">

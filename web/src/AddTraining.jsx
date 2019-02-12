@@ -5,12 +5,12 @@ import "./addTraining.css";
 class AddTraining extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             userInputText: '',
             userInputTime: '',
             userInputDate: ''
-        }
+        };
         this.onUserInputTextChange = this.onUserInputTextChange.bind(this);
         this.onUserInputTimeChange = this.onUserInputTimeChange.bind(this);
         this.onUserInputDateChange = this.onUserInputDateChange.bind(this);
@@ -50,10 +50,11 @@ class AddTraining extends React.Component {
         const { userInputText, userInputTime, userInputDate } = this.state;
         createTrainingSessionFn(nextId, userInputText, userInputTime, userInputDate)
     }
+
 }
 
 AddTraining.propTypes = {
     createTrainingSessionFn: PropTypes.func.isRequired
-}
+};
 
 export default AddTraining;
