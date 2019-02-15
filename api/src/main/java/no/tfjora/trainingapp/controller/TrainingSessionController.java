@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/trainingsession", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/trainingsessions", produces = MediaType.APPLICATION_JSON_VALUE)
 public class TrainingSessionController {
 
     private TrainingSessionRepository trainingSessionRepository;
@@ -33,4 +33,11 @@ public class TrainingSessionController {
     public void insert(@RequestBody TrainingSession trainingSession) {
         trainingSessionRepository.insert(trainingSession);
     }
+/*
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public void add(@RequestBody List<TrainingSession> trainingSession) {
+         trainingSessionRepository.add(trainingSession);
+    }
+*/
 }
+

@@ -6,8 +6,8 @@ public class TrainingSession {
 
     private int id;
     private String name;
-    private LocalDate date;
     private long minutes;
+    private LocalDate date;
 
     public int getId() {
         return id;
@@ -25,19 +25,19 @@ public class TrainingSession {
         return name;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
     public long getMinutes() {
         return minutes;
     }
 
     public void setMinutes(long minutes) {
         this.minutes = minutes;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

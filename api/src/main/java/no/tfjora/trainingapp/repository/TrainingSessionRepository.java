@@ -39,14 +39,24 @@ public class TrainingSessionRepository {
 
     public List<TrainingSession> findById(int id) {
         try {
-            return jdbcTemplate.query("SELECT * FROM trainingsession WHERE id = ?",new Object[]{id}, trainingSessionRowMapper);
+            return jdbcTemplate.query("SELECT * FROM trainingsession WHERE id = ?", new Object[]{id}, trainingSessionRowMapper);
         } catch (DataAccessException e) {
-            return  Collections.emptyList();
+            return Collections.emptyList();
         }
     }
-
-    public void insert(TrainingSession trainingSession) {
+/*
+    public void add(List<TrainingSession> trainingSessions) {
         String sql = "INSERT INTO trainingsession(`name`, `minutes`, `date`) VALUES (?, ?, ?, ?)";
+        List<Object> sqlParameters = new ArrayList<Object>();
+
+        for (TrainingSession trainingSession : trainingSessions) {
+            sqlParameters.add(new Object[]{trainingSession.getName(), trainingSession.getMinutes(), trainingSession.getDate()});
+        }
+        jdbcTemplate.update(sql, sqlParameters);
+    }
+*/
+    public void insert(TrainingSession trainingSession) {
+        String sql = "INSERT INTO trainingsession(`name`, `minutes`, `date`) VALUES (?, ?, ?)";
         Object[] sqlParameters = {
                 trainingSession.getName(),
                 trainingSession.getMinutes(),
