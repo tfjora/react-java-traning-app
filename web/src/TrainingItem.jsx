@@ -4,7 +4,7 @@ import TrainingSession from "./TrainingSession";
 import "./trainingItem.css";
 
 class TrainingItem extends React.Component {
-    
+
     constructor(props) {
         super(props);
 
@@ -12,17 +12,23 @@ class TrainingItem extends React.Component {
     }
 
     render() {
-        const { name, time, date, title} = this.props.trainingSession;
-        return(
-            <div className="training-show__container">
-                <div className="training-show__text">
-                    <p> Training: {name} {title}</p>
-                    <p> Time: {time}</p>
-                    <p> Date: {date}</p>
-                    <p><input type="button" onClick={this.onDeleteClick} value="Delete"/></p>
-                </div>
-            </div>
-        )
+        const {name, time, date, title} = this.props.trainingSession;
+        return (
+                    <tr>
+                        <td>
+                            <p> {name} {title}</p>
+                        </td>
+                        <td>
+                            <p> {time}</p>
+                        </td>
+                        <td>
+                            <p> {date}</p>
+                        </td>
+                        <td>
+                            <p><input type="button" onClick={this.onDeleteClick} value="Delete"/></p>
+                        </td>
+                    </tr>
+                )
     }
 
     onDeleteClick() {

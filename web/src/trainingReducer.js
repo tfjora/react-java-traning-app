@@ -1,5 +1,5 @@
 import TrainingSession from "./TrainingSession";
-import { FETCH_TRAINING_SUCCESS, FETCH_CREATE_TRAINING_SESSION, FETCH_DELETE_TRAINING_SESSION } from "./actionTypes";
+import { FETCH_TRAINING_SUCCESS, FETCH_CREATE_TRAINING_SESSION, FETCH_DELETE_TRAINING_SESSION, FETCH_GET_ALL_TRAINING_SESSIONS_NAME } from "./actionTypes";
 
 export const trainingReducer = (trainingSessions = [], action) => {
     switch (action.type) {
@@ -11,7 +11,9 @@ export const trainingReducer = (trainingSessions = [], action) => {
         case FETCH_DELETE_TRAINING_SESSION:
             return trainingSessions.filter(trainingSession => trainingSession.id !== action.id);
         case FETCH_TRAINING_SUCCESS:
-            return action.body.results.map(result => new TrainingSession(result.id, result.name, result.time, result.date));
+            return action.body.map(result => new TrainingSession(result.id, result.name, result.minutes, result.date));
+        case FETCH_GET_ALL_TRAINING_SESSIONS_NAME:
+            return trainingSessions.filter(trainingSession => trainingSession.name.includes(action.name));
         default:
             return trainingSessions;
     }

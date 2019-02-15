@@ -1,8 +1,8 @@
 import { fetchTrainingSessions } from "./trainingSessionService";
-import { FETCH_TRAINING_FAILURE, FETCH_TRAINING_REQUEST, FETCH_TRAINING_SUCCESS } from "./actionTypes";
+import { FETCH_TRAINING_FAILURE, FETCH_TRAINING_REQUEST, FETCH_TRAINING_SUCCESS, FETCH_GET_ALL_TRAINING_SESSIONS_NAME, FETCH_DELETE_TRAINING_SESSION, FETCH_CREATE_TRAINING_SESSION} from "./actionTypes";
 
 export const createTrainingSession= (id, name, time, date) => ({
-    type: "CREATE_TRAINING_SESSION",
+    type: FETCH_CREATE_TRAINING_SESSION,
     id, 
     name,
     time,
@@ -10,9 +10,14 @@ export const createTrainingSession= (id, name, time, date) => ({
 });
 
 export const deleteTrainingSession = id => ({
-    type: "DELETE_TRAINING_SESSION",
+    type: FETCH_DELETE_TRAINING_SESSION,
     id
 });
+
+export const getAllTrainingSessionsName = userInputText => ({
+    type: FETCH_GET_ALL_TRAINING_SESSIONS_NAME,
+    userInputText
+})
 
 export const fetchTrainingRequest = () => ({
     type:  FETCH_TRAINING_REQUEST

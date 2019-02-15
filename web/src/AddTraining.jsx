@@ -20,7 +20,7 @@ class AddTraining extends React.Component {
     render() {
         return (
             <div className="training-add__container">
-                <input type="text" onChange={this.onUserInputTextChange} />
+                <input type="text" placeholder="Type" onChange={this.onUserInputTextChange} />
                 <input type="time" onChange={this.onUserInputTimeChange} />
                 <input type="date" onChange={this.onUserInputDateChange} />
                 <input type="button" onClick={this.onAddClick} value="Add" />
@@ -30,7 +30,8 @@ class AddTraining extends React.Component {
     onUserInputTextChange(event) {
         this.setState({
             userInputText: event.target.value
-        })
+        });
+      //  getTrainingSessionsNameFn(this.state.userInputText)
     }
 
     onUserInputTimeChange(event) {
@@ -44,6 +45,8 @@ class AddTraining extends React.Component {
             userInputDate: event.target.value
         })
     }
+
+
 
     onAddClick() {
         const { nextId, createTrainingSessionFn } = this.props;
