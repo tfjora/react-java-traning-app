@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TrainingSession from "./TrainingSession";
 import "./trainingItem.css";
 
 class TrainingItem extends React.Component {
@@ -12,14 +11,14 @@ class TrainingItem extends React.Component {
     }
 
     render() {
-        const {name, time, date, title} = this.props.trainingSession;
+        const {name, minutes, date} = this.props.trainingSession;
         return (
                     <tr>
                         <td>
-                            <p> {name} {title}</p>
+                            <p> {name} </p>
                         </td>
                         <td>
-                            <p> {time}</p>
+                            <p> {minutes}</p>
                         </td>
                         <td>
                             <p> {date}</p>
@@ -32,12 +31,12 @@ class TrainingItem extends React.Component {
     }
 
     onDeleteClick() {
-        this.props.deleteTrainingSessionFn(this.props.trainingSession.id)
+         this.props.deleteTrainingSessionWithIdFn(this.props.trainingSession.id)
     }
 }
 
 TrainingItem.propTypes = {
-    trainingSession: PropTypes.instanceOf(TrainingSession).isRequired
+    trainingSession: PropTypes.instanceOf(Object).isRequired
 };
 
 export default TrainingItem;

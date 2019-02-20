@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TrainingItemContainer from "./TrainingItemContainer";
-import TrainingSession from "./TrainingSession";
 
 const TrainingList = props => (
     <div className="training-show__container">
@@ -23,7 +22,7 @@ const TrainingList = props => (
 );
 
 TrainingList.propTypes = {
-    trainingSessions: PropTypes.arrayOf(PropTypes.instanceOf(TrainingSession)).isRequired
+    trainingSessions: PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired
 };
 
 export default TrainingList;

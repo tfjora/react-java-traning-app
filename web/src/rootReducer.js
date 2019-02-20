@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { trainingReducer } from "./trainingReducer";
+import { trainingSessionReducer } from "./trainingSessionReducer";
 
 export default combineReducers ({
-    trainingSessions: trainingReducer
+    trainingSessions: trainingSessionReducer
 });

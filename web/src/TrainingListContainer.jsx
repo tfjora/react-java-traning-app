@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import TrainingList from "./TrainingList";
-import TrainingSession from "./TrainingSession";
-import {fetchTrainingSession} from "./trainingActions";
+import { getTrainingSessions } from "./trainingSessionActions";
 
 class TrainingListContainer extends React.Component {
 
@@ -17,14 +16,11 @@ class TrainingListContainer extends React.Component {
     }
 
     render() {
-        const {trainingSessions} = this.props;
-        return <TrainingList
-            trainingSessions={trainingSessions}
-        />
+        return <TrainingList trainingSessions={this.props.trainingSessions} />
     }
 
     onRefresh() {
-        this.props.onFetchTrainingSessions();
+        this.props.onFetchAllTrainingSessions();
     }
 }
 
@@ -33,12 +29,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onFetchTrainingSessions: () => dispatch(fetchTrainingSession())
+    onFetchAllTrainingSessions: () => dispatch(getTrainingSessions())
 });
 
 TrainingListContainer.propTypes = {
-    trainingSessions: PropTypes.arrayOf(PropTypes.instanceOf(TrainingSession)).isRequired,
-    onFetchTrainingSessions: PropTypes.func.isRequired
+    trainingSessions: PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired,
+    onFetchAllTrainingSessions: PropTypes.func.isRequired
 };
 
 export default connect(

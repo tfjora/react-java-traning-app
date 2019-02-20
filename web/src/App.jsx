@@ -1,5 +1,5 @@
 import React from 'react';
-import AddTrainingContainer from './AddTrainingContainer';
+import AddTrainingContainer from './AddTrainingSessionContainer';
 import TrainingListContainer from './TrainingListContainer';
 
 import "./app.css";

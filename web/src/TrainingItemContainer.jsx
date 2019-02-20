@@ -2,17 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TrainingItem from "./TrainingItem";
-import TrainingSession from "./TrainingSession";
-import {deleteTrainingSession} from "./trainingActions";
+import { deleteTrainingSessionWithId } from "./trainingSessionActions";
 
 const TrainingItemContainer = props => <TrainingItem {...props} />;
 
 const mapDispatchToProps = dispatch => ({
-    deleteTrainingSessionFn: id => dispatch(deleteTrainingSession(id))
+    deleteTrainingSessionWithIdFn: id => dispatch(deleteTrainingSessionWithId(id))
 });
 
 TrainingItemContainer.propTypes = {
-    trainingSession: PropTypes.instanceOf(TrainingSession).isRequired
+    trainingSession: PropTypes.instanceOf(Object).isRequired
 };
 
 export default connect(

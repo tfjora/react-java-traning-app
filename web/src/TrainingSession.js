@@ -1,10 +1,10 @@
 class TrainingSession {
-    constructor(id, name, time, date){
-        this.id = id;
-        this.name = name;
-        this.time = time;
-        this.date = date;
-    }
+
+    id;
+    name;
+    minutes;
+    date;
+
 }
 
 export default TrainingSession;
