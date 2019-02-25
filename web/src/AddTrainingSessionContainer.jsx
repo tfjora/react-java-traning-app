@@ -20,6 +20,7 @@ AddTrainingSessionContainer.propTypes = {
     createTrainingSessionFn: PropTypes.func.isRequired
 };
 
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps

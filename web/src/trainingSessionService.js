@@ -25,3 +25,14 @@ export const deleteTrainingSession = id => fetch(
     })
     .then(response => response.json())
     .catch(e => console.error("Could not delete training session with id [" + id + "]", e));
+
+export const updateTrainingSessionAPI = trainingSession => fetch(
+    BASE_URL + trainingSession.id, {
+        method: 'PUT',
+        body: JSON.stringify(trainingSession),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .catch(e => console.error("Could not fetch training session by id = [" + trainingSession.id + "]", e));

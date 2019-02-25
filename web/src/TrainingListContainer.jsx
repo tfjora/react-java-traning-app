@@ -37,6 +37,8 @@ TrainingListContainer.propTypes = {
     onFetchAllTrainingSessions: PropTypes.func.isRequired
 };
 
+
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps

@@ -18,6 +18,7 @@ const TrainingList = props => (
                 )}
                 </tbody>
             </table>
+
     </div>
 );
 

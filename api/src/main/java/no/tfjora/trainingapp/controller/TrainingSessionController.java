@@ -40,10 +40,11 @@ public class TrainingSessionController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<TrainingSession> findById(@PathVariable int id) {
         try {
+            LOGGER.info("Id controller: " + id);
             TrainingSession trainingSession = trainingSessionRepository.findById(id);
             return trainingSession != null ? ResponseEntity.ok(trainingSession) : ResponseEntity.notFound().build();
         } catch (Exception e) {
-            LOGGER.error("Could not get all training sessions", e);
+            LOGGER.error("Could not get training session with id [" + id + "]", e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -53,7 +54,7 @@ public class TrainingSessionController {
         try {
             return ResponseEntity.ok(trainingSessionRepository.deleteById(id));
         } catch (Exception e) {
-            LOGGER.error("Could not delete a training session with id [" + id + "]");
+            LOGGER.error("Could not delete a training session with id [" + id + "]", e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
