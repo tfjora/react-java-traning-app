@@ -1,16 +1,28 @@
 import React from "react";
-import {connect} from "react-redux";
-import PropTypes from "prop-types";
 import UpdateTrainingSession from "./UpdateTrainingSession";
-import { getTrainingSession } from "./trainingSessionReducer";
+import {connect} from "react-redux";
 
-const UpdateTrainingSessionContainer = props => <UpdateTrainingSession {...props} />;
+import { formatSecondsToHoursMinutesSecound, getTrainingSession } from "./trainingSessionReducer";
+
+class UpdateTrainingSessionContainer extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+      return (
+          <UpdateTrainingSession {...this.props}/>
+      )
+    }
+}
+
 
 const mapStateToProps = (state, ownProps) => ({
-    trainingSession: getTrainingSession(ownProps.match.params.id, state)
+    trainingSessions: state.trainingSessions,
+    trainingSession: getTrainingSession(state, ownProps.match.params.id),
+    getFormatSecondsToHoursMinutesSecound: formatSecondsToHoursMinutesSecound(getTrainingSession(state, ownProps.match.params.id)),
 });
 
 export default connect(
     mapStateToProps,
     null
-)(UpdateTrainingSessionContainer)
+)(UpdateTrainingSessionContainer);
