@@ -1,5 +1,5 @@
-import { fetchTrainingSessions, postTrainingSession, deleteTrainingSession, updateTrainingSessionAPI, fetchTrainingSessionById } from "./trainingSessionService";
-import {RECEIVED_TRAINING_SESSIONS, CREATED_TRAINING_SESSION, DELETED_TRAINING_SESSION, UPDATED_TRAINING_SESSION, GET_TRAINING_SESSION_BY_ID } from "./actionTypes";
+import { fetchTrainingSessions, postTrainingSession, deleteTrainingSession } from "./trainingSessionService";
+import {RECEIVED_TRAINING_SESSIONS, CREATED_TRAINING_SESSION, DELETED_TRAINING_SESSION } from "./actionTypes";
 
 export const receivedTrainingSessions = body => ({
     type: RECEIVED_TRAINING_SESSIONS,
@@ -14,11 +14,6 @@ export const createdTrainingSession = body => ({
 export const deletedTrainingSession = id => ({
     type: DELETED_TRAINING_SESSION,
     id
-});
-
-export const updatedTrainingSessionById = body => ({
-   type: UPDATED_TRAINING_SESSION,
-    body
 });
 
 export const getTrainingSessions = () => dispatch => {
@@ -41,10 +36,3 @@ export const deleteTrainingSessionWithId = id => dispatch => {
         .catch(e => console.error("Could not delete training sessiong with id [" + id + "]", e));
 };
 
-
-export const updateTrainingSession = trainingSession => dispatch => {
-    updateTrainingSessionAPI(trainingSession)
-        .then(
-            body => dispatch(updatedTrainingSessionById(body)))
-        .catch(e => console.log(e));
-};

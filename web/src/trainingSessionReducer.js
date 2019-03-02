@@ -2,10 +2,8 @@ import {
     RECEIVED_TRAINING_SESSIONS,
     CREATED_TRAINING_SESSION,
     DELETED_TRAINING_SESSION,
-    UPDATED_TRAINING_SESSION,
-    GET_TRAINING_SESSION_BY_ID
+    UPDATED_TRAINING_SESSION
 } from "./actionTypes";
-import TrainingSession from "./TrainingSession";
 
 export const trainingSessionReducer = (trainingSessions = [], action) => {
     switch (action.type) {
@@ -15,8 +13,6 @@ export const trainingSessionReducer = (trainingSessions = [], action) => {
             return [action.body, ...trainingSessions];
         case DELETED_TRAINING_SESSION:
             return trainingSessions.filter(trainingSession => trainingSession.id !== action.id);
-        case GET_TRAINING_SESSION_BY_ID:
-            return null;
         case UPDATED_TRAINING_SESSION:
             console.log(action.body);
 
