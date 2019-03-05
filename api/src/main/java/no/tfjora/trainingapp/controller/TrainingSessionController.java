@@ -59,6 +59,17 @@ public class TrainingSessionController {
         }
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<TrainingSession> updatedById(@RequestBody TrainingSession trainingSession) {
+        try {
+            return ResponseEntity.ok(trainingSessionRepository.updateById(trainingSession));
+        } catch (Exception e) {
+            LOGGER.error("Could not delete a training session with id [" + trainingSession.getId() + "]", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity insert(@RequestBody TrainingSession trainingSession) {
         try {

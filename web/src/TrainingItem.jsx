@@ -11,12 +11,9 @@ class TrainingItem extends React.Component {
         this.onDeleteClick = this.onDeleteClick.bind(this);
     }
 
-
     render() {
 
         const {id, name, minutes, date} = this.props.trainingSession;
-
-
         return (
             <tr>
                 <td>
@@ -31,10 +28,7 @@ class TrainingItem extends React.Component {
                 <td>
                     <p><input type="button" onClick={this.onDeleteClick} value="Delete"/></p>
                     <p>
-
-                        <Link to={`/edit/${id}`}>
-                            <input type="button" value="Update"/>
-                        </Link>
+                        <Link to={`/edit/${id}`}><input type="button" value="Update"/></Link>
                     </p>
 
                 </td>

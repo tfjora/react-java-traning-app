@@ -14,13 +14,7 @@ export const trainingSessionReducer = (trainingSessions = [], action) => {
         case DELETED_TRAINING_SESSION:
             return trainingSessions.filter(trainingSession => trainingSession.id !== action.id);
         case UPDATED_TRAINING_SESSION:
-            console.log(action.body);
-
-            //finn og fjern den gamle versjonen fra trainingsessions
-            //ta kopi av trainingsessions og legg inn den nye versjonen
-            //returner den nye listen med trainingsessions
-
-            return [...action.body];
+            return trainingSessions.filter(trainingSession => trainingSession.id !== action.id);
         default:
             return trainingSessions;
     }
@@ -55,12 +49,10 @@ export const formatSecondsToHoursMinutesSecound = trainingSession => {
         let seconds = totalSeconds % 60;
         if (seconds < 10)
             seconds = "0" + seconds;
-        console.log( hours + ":" + minutes + ":" + seconds);
         return hours + ":" + minutes + ":" + seconds;
     }
     return formatSecound;
 };
-
 
 export const getTrainingSession = (state, id) => {
     if (state.trainingSessions.id !== null) {
@@ -69,3 +61,4 @@ export const getTrainingSession = (state, id) => {
          console.log(" null: " + id + "\nTrainingsession id: " + state.trainingSessions);
     }
 };
+

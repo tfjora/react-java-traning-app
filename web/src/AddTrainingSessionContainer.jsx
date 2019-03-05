@@ -5,7 +5,7 @@ import AddTrainingSession from "./AddTrainingSession";
 import { createTrainingSession } from "./trainingSessionActions";
 import { getNowAsDateString } from "./trainingSessionReducer";
 
-const AddTrainingSessionContainer = props => <AddTrainingSession {...props} />
+const AddTrainingSessionContainer = props => <AddTrainingSession {...props} />;
 
 const mapStateToProps = () => ({
     getTodaysNowDate2: getNowAsDateString()

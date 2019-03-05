@@ -56,8 +56,16 @@ public class TrainingSessionRepository {
         return keyHolder.getKey() != null ? keyHolder.getKey().intValue() : 0;
     }
 
+    public TrainingSession updateById(TrainingSession trainingSession) {
+        String sql = "UPDATE trainingsession set name = ?, minutes = ?, date = ? WHERE id = ?";
+        if (jdbcTemplate.update(sql, trainingSession.getName(), trainingSession.getMinutes(), trainingSession.getDate(), trainingSession.getId()) > 0) {
+            return trainingSession;
+        }
+        return null;
+    }
+
     public boolean deleteById(int id) {
-        String sql = "DELETE FROM trainingsession WHERE id = "+id;
+        String sql = "DELETE FROM trainingsession WHERE id = " + id;
         int rowsAffected = jdbcTemplate.update(sql);
         return rowsAffected > 0;
     }
