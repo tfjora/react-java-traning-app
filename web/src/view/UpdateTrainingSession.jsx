@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./addTrainingSession.css";
-import TrainingSession from "./TrainingSession";
+import "../css/addTrainingSession.css";
+import TrainingSession from "../class/TrainingSession";
 
 
 class UpdateTrainingSession extends React.Component {

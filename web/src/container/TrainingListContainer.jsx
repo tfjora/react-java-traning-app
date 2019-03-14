@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
-import TrainingList from "./TrainingList";
-import {getTrainingSessions} from "./trainingSessionActions";
+import TrainingList from "../view/TrainingList";
+import {getTrainingSessions} from "../actions/trainingSessionActions";
 
 class TrainingListContainer extends React.Component {
     constructor(props) {

@@ -3,7 +3,7 @@ import {
     CREATED_TRAINING_SESSION,
     DELETED_TRAINING_SESSION,
     UPDATED_TRAINING_SESSION
-} from "./actionTypes";
+} from "../actions/actionTypes";
 
 export const trainingSessionReducer = (trainingSessions = [], action) => {
     switch (action.type) {

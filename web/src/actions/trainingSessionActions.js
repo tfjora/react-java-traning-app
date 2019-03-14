@@ -1,4 +1,4 @@
-import { fetchTrainingSessions, postTrainingSession, deleteTrainingSession, putTrainingSession } from "./trainingSessionService";
+import { fetchTrainingSessions, postTrainingSession, deleteTrainingSession, putTrainingSession } from "../service/trainingSessionService";
 import {RECEIVED_TRAINING_SESSIONS, CREATED_TRAINING_SESSION, DELETED_TRAINING_SESSION, UPDATED_TRAINING_SESSION } from "./actionTypes";
 
 export const receivedTrainingSessions = body => ({

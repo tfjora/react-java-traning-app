@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TrainingItemContainer from "./TrainingItemContainer";
+import TrainingItemContainer from "../container/TrainingItemContainer";
 
 const TrainingList = props => (
-    <div className="training-show__container">
-            <table>
+    <div className="training-show__container_list">
+            <table className="table">
                 <tbody>
                 <tr>
                     <th>Type</th>

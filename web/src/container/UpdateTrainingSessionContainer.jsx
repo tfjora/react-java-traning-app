@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
-import {formatSecondsToHoursMinutesSecound, getTrainingSession} from "./trainingSessionReducer";
-import UpdateTrainingSession from "./UpdateTrainingSession";
-import {getTrainingSessions, updateTrainingSession} from "./trainingSessionActions";
+import {formatSecondsToHoursMinutesSecound, getTrainingSession} from "../reducer/trainingSessionReducer";
+import UpdateTrainingSession from "../view/UpdateTrainingSession";
+import {getTrainingSessions, updateTrainingSession} from "../actions/trainingSessionActions";
 
 class UpdateTrainingSessionContainer extends React.Component {
     constructor(props) {

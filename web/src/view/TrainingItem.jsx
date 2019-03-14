@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./trainingItem.css";
 import {Link} from 'react-router-dom';
 
 class TrainingItem extends React.Component {
@@ -26,11 +25,8 @@ class TrainingItem extends React.Component {
                     <p> {date}</p>
                 </td>
                 <td>
-                    <p><input type="button" onClick={this.onDeleteClick} value="Delete"/></p>
-                    <p>
-                        <Link to={`/edit/${id}`}><input type="button" value="Update"/></Link>
-                    </p>
-
+                    <input type="button" onClick={this.onDeleteClick} value="Delete"/>
+                    <Link to={`/edit/${id}`}><input type="button" value="Update"/></Link>
                 </td>
             </tr>
         )

@@ -1,0 +1,74 @@
+.parent-wrapper {
+    background: #fffcfc;
+    height: 100%;
+}
+
+.child div {
+    background: white;
+    font-size: 15px;
+}
+
+.child div table tbody tr th {
+    text-align: left;
+}
+
+.child div table tbody tr td {
+    border: 1px solid lightgray;
+    padding: 0.5em;
+}
+
+.child div table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+nav {
+    background: #eee;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #666;
+    display: block;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: lightblue;
+}
+
+/* Flex */
+
+@media screen and (min-width: 768px) {
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        flex: 1 1 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .child {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .child div {
+        flex: 1 1 0;
+        margin: 34px 33px;
+    }
+}
+

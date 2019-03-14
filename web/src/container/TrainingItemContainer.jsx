@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import TrainingItem from "./TrainingItem";
-import { deleteTrainingSessionWithId } from "./trainingSessionActions";
+import TrainingItem from "../view/TrainingItem";
+import { deleteTrainingSessionWithId } from "../actions/trainingSessionActions";
 
 const TrainingItemContainer = props => <TrainingItem {...props} />;
 

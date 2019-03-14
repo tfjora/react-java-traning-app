@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./addTrainingSession.css";
-import TrainingSession from "./TrainingSession";
+import "../css/addTrainingSession.css";
+import TrainingSession from "../class/TrainingSession";
+import TrainingSessionNotifications from "../class/TrainingSessionNotifications";
 
 class AddTrainingSession extends React.Component {
     constructor(props) {
@@ -50,11 +51,23 @@ class AddTrainingSession extends React.Component {
 
     onAddClick() {
         const {userInputText, userInputTime, userInputDate} = this.state;
+        this.addTrainingSession(userInputText, userInputTime, userInputDate);
+        this.addTrainingSessionNotification("Created");
+    }
+
+    addTrainingSession(userInputText, userInputTime, userInputDate) {
+
         let trainingSession = new TrainingSession();
         trainingSession.name = userInputText;
         trainingSession.minutes = this.findTimeSeconds(userInputTime);
         trainingSession.date = userInputDate;
         this.props.createTrainingSessionFn(trainingSession);
+    }
+
+    addTrainingSessionNotification(type) {
+        let trainingSessionNotifications = new TrainingSessionNotifications();
+        trainingSessionNotifications.type = type;
+        this.props.createTrainingSessionNotificationFn(trainingSessionNotifications);
     }
 
     findTimeSeconds(userInputTime) {
