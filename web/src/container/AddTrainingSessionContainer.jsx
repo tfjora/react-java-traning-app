@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import AddTrainingSession from "../view/AddTrainingSession";
 import { createTrainingSession } from "../actions/trainingSessionActions";
-import { createTrainingSessionNotification } from "../actions/trainingSessionNotificationActions"
 import { getNowAsDateString } from "../reducer/trainingSessionReducer";
 
 const AddTrainingSessionContainer = props => <AddTrainingSession {...props} />;
@@ -14,7 +13,6 @@ const mapStateToProps = () => ({
 
 const mapDispatchToProps = dispatch => ({
     createTrainingSessionFn: trainingSession => dispatch(createTrainingSession(trainingSession)),
-    createTrainingSessionNotificationFn: trainingSessionNotification => dispatch(createTrainingSessionNotification(trainingSessionNotification)),
 });
 
 

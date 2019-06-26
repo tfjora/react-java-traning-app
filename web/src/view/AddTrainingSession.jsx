@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../css/addTrainingSession.css";
 import TrainingSession from "../class/TrainingSession";
-import TrainingSessionNotifications from "../class/TrainingSessionNotifications";
 
 class AddTrainingSession extends React.Component {
     constructor(props) {
@@ -62,12 +61,6 @@ class AddTrainingSession extends React.Component {
         trainingSession.minutes = this.findTimeSeconds(userInputTime);
         trainingSession.date = userInputDate;
         this.props.createTrainingSessionFn(trainingSession);
-    }
-
-    addTrainingSessionNotification(type) {
-        let trainingSessionNotifications = new TrainingSessionNotifications();
-        trainingSessionNotifications.type = type;
-        this.props.createTrainingSessionNotificationFn(trainingSessionNotifications);
     }
 
     findTimeSeconds(userInputTime) {

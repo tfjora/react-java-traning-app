@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^6.2.1",
     "mysql": "^2.16.0",
     "node": "^11.10.0",
     "rc-time-picker": "^3.6.2",

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import AddTrainingContainer from '../container/AddTrainingSessionContainer';
 import TrainingListContainer from '../container/TrainingListContainer';
 import UpdateTrainingSessionContainer from "../container/UpdateTrainingSessionContainer";
+import Application from "./Application";
 import "../css/app.css";
 
 const App = () => {
@@ -21,6 +22,9 @@ const App = () => {
                             </li>
                             <li className="app-list-item">
                                 <Link to="/list">List</Link>
+                            </li>
+                            <li className="app-list-item">
+                                <Link to="/app">app</Link>
                             </li>
                         </ul>
 
@@ -50,6 +54,7 @@ const App = () => {
                                 <Route path="/add" component={AddTrainingContainer}/>
                                 <Route path="/list" component={TrainingListContainer}/>
                                 <Route path="/edit/:id" component={UpdateTrainingSessionContainer}/>
+                                <Route path="/app" component={Application}/>
                             </Switch>
                         </main>
                         </div>
