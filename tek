@@ -1,0 +1,27 @@
+//Zustand:
+import produce, { Draft } from 'immer';
+import create, { State, StateCreator } from 'zustand';
+
+const immer =
+    <T extends State>(
+        config: StateCreator<T, (fn: (draft: Draft<T>) => void) => void>
+    ): StateCreator<T> =>
+    (set, get, api) =>
+        config((fn) => set(produce(fn) as (state: T) => T), get, api);
+
+type StoreState = {
+    isSafeToClose: boolean;
+    reset: () => void;
+};
+
+const useChecklistStore = create<StoreState>(
+    immer((set) => ({
+        isSafeToClose: true,
+        reset: () =>
+            set((state) => {
+                state.isSafeToClose = true;
+            }),
+    }))
+);
+
+export default useChecklistStore;
